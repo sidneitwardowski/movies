@@ -65,6 +65,20 @@ Retorna o ranking de produtores com menor e maior intervalo entre vitórias.
 }
 ```
 
+## Acessando o Swagger
+
+O projeto utiliza o **Springdoc OpenAPI** para gerar a documentação interativa da API com o **Swagger UI**.
+
+Após iniciar a aplicação, você pode acessar a documentação da API através do navegador no seguinte endereço:
+
+```
+http://localhost:8080/swagger
+```
+
+A partir dessa interface, você poderá:
+- Visualizar os endpoints disponíveis
+- Consultar os modelos de request e response
+- Realizar requisições diretamente pela interface do Swagger UI
 ## Como Executar o Projeto
 
 ### Pré-requisitos
