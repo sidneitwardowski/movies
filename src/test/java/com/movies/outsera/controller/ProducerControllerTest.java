@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.hasSize;
@@ -16,7 +15,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-@ActiveProfiles("test")
 class ProducerControllerIntegrationTest {
 
     @Autowired
@@ -29,11 +27,12 @@ class ProducerControllerIntegrationTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.min").isArray())
-                .andExpect(jsonPath("$.min", hasSize(3)))
+                .andExpect(jsonPath("$.min", hasSize(2)))
                 .andExpect(jsonPath("$.min[0].interval").value(1))
                 .andExpect(jsonPath("$.min[1].interval").value(1))
                 .andExpect(jsonPath("$.max").isArray())
-                .andExpect(jsonPath("$.max", hasSize(1)))
-                .andExpect(jsonPath("$.max[0].interval").value(6));
+                .andExpect(jsonPath("$.max", hasSize(2)))
+                .andExpect(jsonPath("$.max[0].interval").value(22))
+                .andExpect(jsonPath("$.max[1].interval").value(22));
     }
 }

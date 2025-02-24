@@ -16,7 +16,7 @@ Projeto desenvolvido em **Spring Boot** com o objetivo de analisar vencedores de
 
 ## Leitura do CSV
 O projeto faz a leitura de um arquivo CSV ao iniciar a aplicação. Esse arquivo contém as informações sobre os filmes indicados e vencedores de prêmios.
-O arquivo deve ser inserido na pasta resources do projeto (main/resources e main/test/resources) e o nome do arquivo deve constrar na propriedade no `application.properties`, conforme o exemplo abaixo:
+O arquivo deve ser inserido na pasta resources do projeto (main/resources) e o nome do arquivo deve constrar na propriedade no `application.properties`, conforme o exemplo abaixo:
 
 **file.name** 
 ```properties
